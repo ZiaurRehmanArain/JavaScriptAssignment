@@ -5,8 +5,107 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+    p{
+        margin: 20px;
+        width: 100%;
+    }
+  p{
+    font-size: 1.2rem;
+   font-family: sans-serif;
+}
+select{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 5px;
+    font-family: sans-serif;
+}
+#firstDiv{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+h1{
+    text-align: center;
+    background-color: cadetblue;
+    height: 50px;
+}
+h2{
+    padding-left: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: cadetblue;
+    padding-bottom: 10px;
+    border-bottom: 1px solid ;
+    }
+</style>
 </head>
 <body>
+
+    <h1>MOVIES WEB APP</h1>
+    <div id="firstDiv">
+        <div style="width: 23%;margin-left: 10px;">
+<p>Genre: <br>
+    <select name="" id="genre" onchange="checkgenre()">
+        <option value="All">All</option>
+    
+       
+    </select>
+</p>
+        </div>
+
+        <div style="width: 23%;margin-left: 10px;">
+            <p>year: <br><select name="" id="year" onchange="checkyear()">
+                <option value="All">All</option>
+               
+            </select></p>
+        </div>
+        <div style="width: 23%;margin-left: 10px;">
+            <p>
+                Language <br>
+                <select name="" id="language" onchange="checklanguage()">
+                    <option value="All">All</option>
+                  
+                   
+                </select>
+            </p>
+        </div>
+
+        <div style="width: 23%;margin-left: 10px;">
+            <p>
+                Rating <br>
+                <select name="" id="rating" onchange="checkrating()">
+                    <option value="All">All</option>
+                  
+                   
+                </select>
+            </p>
+        </div>
+    </div>
+
+
+<button onclick="check()">Loading Data</button>
+<h2>Search Result</h2>
+<table style="width: 80%;font-weight: bold;font-family: sans-serif;font-size: 1rem;" id="tableid">
+    <tr>
+        <th style="width: 10%;">S:NO</th>
+        <th style="width: 30%;text-align: left;">Name</th>
+        <th style="width: 10%;">Year</th>
+
+    </tr>
+    <tr>
+        <td style="width: 10%;">Rank</td><td style="width: 50%;">     <p>   <div style="display: inline-block;margin-top: 5px;">
+            <b style="font-size: 1.2rem;">${v.title}</b> <br><br> <b style="border: 1px solid black;border-radius: 5px;">${v.certification}</b>  ${v.genres.toString()}</p>
+</div>      
+  </td>
+        
+        <td style="width: 10%;">${v.release_date}</td>
+    </tr>
+</table>
+
+<!-- <img valign="top" width="60px" height="60px" style="float: left;" src="1.png" alt="">  -->
+
+<div id="divId"></div>
     
 
     <script src="app.js"></script>
